@@ -7,13 +7,13 @@ public class TestaConta {
         Scanner scanner = new Scanner(System.in);
         ContaCorrente cc1 = new ContaCorrente(22, 1, "Banco AA", 100.00, 1000.00);
         System.out.println("=== Conta corrente criada com sucesso! ===");
-        System.out.println("Saldo em conta corrente: R$ " + cc1.getSaldo());
+        System.out.println("Saldo em conta corrente: R$ " + cc1.getSaldo() + " mais limite de R$ " + cc1.getChequeEspecial() + " para cheque especial.");
         do {
             System.out.print("Quanto quer sacar? (Digite 0 para cancelar) R$ ");
             entrada = scanner.nextDouble();
             cc1.setSacar(entrada);
             if (entrada != 0) {
-                System.out.println("Após o saque, o saldo atual é de R$ " + cc1.getSaldo());
+                System.out.println("Após o saque, o saldo atual é de R$ " + cc1.getSaldo() + " mais limite de R$ " + cc1.getChequeEspecial() + " para cheque especial.");
             } else {
                 System.out.println("Fim da operação de saque.");
                 System.out.println("");

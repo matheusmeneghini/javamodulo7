@@ -18,11 +18,15 @@ public class ContaCorrente extends Conta{
     }
     @Override
     public double getSaldo(){
-        return this.chequeEspecial + this.saldo;
+        return this.saldo;
+    }
+
+    public double getChequeEspecial() {
+        return chequeEspecial;
     }
 
     public double setSacar(double sacar) {
-        if (sacar > getSaldo()) {
+        if (sacar > getSaldo() + getChequeEspecial()) {
             return 0;
         } else {
             return this.saldo -= sacar;
